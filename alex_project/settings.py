@@ -176,8 +176,8 @@ if os.environ.get('ENV') == 'PRODUCTION':
     ADMIN_MEDIA_PREFIX = '/blog/media/'
     # "************ END DROPBOX CONFIGURATION ************"
 
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    # whitenoise.storage.CompressedStaticFilesStorage
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+    # whitenoise.storage.CompressedManifestStaticFilesStorage
     import dj_database_url
 
     db_from_env = dj_database_url.config(conn_max_age=500)
