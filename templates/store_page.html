@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load bootstrap3 %}
+    {% load static %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="{% static "/css/base.css" %}">
+    <link rel="stylesheet/less" type='text/css' href="{% static "less/store.less" %}">
+    {% bootstrap_css %}
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- Main CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/post/css/style.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% comment %} Translators: Titre la page {% endcomment %}
+    <title>{% trans 'Freelance Developper' %}</title>
+{% endblock %}
+
+
+{% block section1 %}
+    <!-- premier partie du triangle coloré en blue -->
+    <div class='col-md-12 Sheader1'>
+        <p class='my_Sheader1'>
+        <strong>{% trans 'Store' %}</strong><br>
+            <small class='Sheader1Content'>
+                {% trans "website development and web applications, responsive design, SEO and optimization" %}
+                {% trans "of applications and website, e-commerce service, below are a few services I provide."%} 
+            </small>
+        </p>
+    </div>
+    
+    <!-- second partie du triangle : c'est transparent -->
+    <div class="col-md-12 Sheader2"></div>
+
+    <div class="col-md-12 Ssection1">
+        <div class="row">
+            <div class="col-md-12 offre">
+				<h1 class="section-header"><span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">No products to sell</span></h1>
+            </div>
+            <div class="col-md-offset-2 col-md-8 offreContent">
+                <h5>
+                </h5>
+            <div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block section2 %}
+
+{% endblock %}
+
+
+{% block script %}
+
+    {% bootstrap_messages %}
+    {% bootstrap_javascript jquery=1 %}
+    <script src='{% static 'js/ExperienceAnimation.js' %}'></script>
+    <script src="{% static 'dist/less.js' %}" type='text/javascript'>
+
+{% endblock script %}

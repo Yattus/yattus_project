@@ -1,0 +1,86 @@
+SYMBOLE:
+    pause: ⏸ 
+    Je suis ici: ⮕
+    fait: ✔
+
+
+1. Definir precisement l'objectif final et la date
+    objectifs: blogs
+
+2. Definir precisement les taches a accomplirent pour atteindre l'objectif
+  BLOGS ET STORE SONT DES APPLICATION ET LE RESTE SONT PROPRE PROJECT.
+    
+ 2 intégrer les applications au project:
+    APPLICATINON BLOGS
+        ***listes des taches***
+        0 choix du language: francais: ✔
+        1 l'intregration de la partie html du project (monSite) au project: ✔
+          0> resolution de la partie html non correct: ✔
+          1> blogs : cliquable et la correction du template: ✔
+          2> corrections des urls vers les templates.✔
+          * home : non cliquable ✔
+          * services : non cliquable ✔
+          * store : non cliquable  ✔
+          * Téléchargement: non cliquable ✔
+
+2 CHOIX TU TEMPLATE:
+  * hmtl: ✔
+        Ordonner les documents:
+        PROJECT: 
+        BLOGS: 
+  * static: ✔
+        Ordonner les documents:
+        PROJECT:  
+        BLOGS: 
+  * media: ✔
+        Ordonner les documents:
+        PROJECT:  
+        BLOGS: 
+
+4 definir precisement les urls basique du site et la redirection vers les applications. ✔
+  1> urls blogs ✔
+  2> urls experiences ✔
+  * home ✔
+  * services ✔
+  * store ✔
+  * panier ✔
+  * Téléchargement ✔
+
+5  Mise en forme de l'affiche des articles.
+    1. Sur les Vue ou template front end
+        1 typed variable articles in template ✔
+    2. Côté back end:✔
+          1 Make bd✔
+            Making test db with django shell✔
+            Untrack settings.py and done a commit✔
+        2 make a view
+            Make a test view ✔
+            Lean Contentype ✔
+            Make view with generic view ✔
+                        Display categories and articles in template with context
+                        I HAVE ADDED A NEW TEMPLATE, ✔
+                            blog_home_page.html: deja configurer✔
+                                absence de categories, champ de recherche et l'img des postes✔
+                                Create ou Ajouter l'option categories:
+                                    La possibilité de choisir dans le filter : dev, entrepreneur et autres✔
+
+⮕                               Create une template de Pagination
+
+                            blog_detail_page: doit etendre le blog_home_page avec le contenu
+                            d'un example bootstrap de customisé
+
+                        and have to configurate:
+                            homepage with all necessairy like categories, img etc, detailpage for article
+                            contactpage, services and others after launched online
+            Pagination:
+                Display article on many page
+            Ajouter un champ de recherche
+
+6 Refaire le template du site.
+    Modifier la page de base identique a tous.
+
+7 Test Unitaire
+8 Lancer le site sur heroku ou aws
+
+
+APPLICATION STORE

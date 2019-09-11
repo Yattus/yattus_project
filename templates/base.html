@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+    {% load bootstrap3 %}
+    {% load static %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% bootstrap_css %}
+    <link rel="shortcut icon" href="{% static 'blog/img/post/images/favicon/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="{% static 'blog/img/post/images/favicon/apple-touch-icon.png' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/base.css' %}">
+
+    <!-- Main CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/post/css/style.css' %}">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- Main CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/post/css/style.css' %}">
+    {% block add_to_base_head %}
+        <!-- HERE ADD THE LINKS FOR THE HTML THAT EXTENDS -->    
+    {% endblock %}
+    {% comment %} Translators: Titre la page {% endcomment %}
+    <title>Demarreur</title>
+{% endblock %}
+</head>
+<body>
+    <div class='container'>
+        {% block container %}
+        <div class='col-md-12'>
+            <header class='row'>
+                {% block header %}
+                <div class="col-md-4" >
+                    <div class='row'>
+                        <img src="{% static "blog/img/alass.jpeg" %}" alt="photo freelance Developper">
+                    </div>
+                </div>
+                <!-- Header second part -->
+                <div class='col-md-8'>
+                    <div class='row'>
+                        <div class='col-md-12'>
+                            <div class='row'>
+                                <div class='col-md-10 nom'>
+                                    <span>{{'Alassane Yattara'|title}}</span>
+                                </div>
+                                <div href='#' class='col-md-2 nom_icon'>
+                                    <span class="fa fa-shopping-cart fa-lg bicons"><span class="badge" id='badg'>0</span></span>
+                                    <!-- translation avec hover -->
+                                    <span class='nom_icon_span'></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-12'>
+                            <div class='row'>
+                                <div class='col-md-10 div_job'>
+                                    <div class='row'>
+                                        <div class='col-md-4' id='experienced'>{% trans 'The experienced' %}</div>
+                                        <div class='col-md-8' id='cadre'><span id='job'>{% trans 'Responsive' %}<span style='color: #424141'>i</span>Design</span></div>
+                                    </div>
+                                </div>
+                                <a href="#" class="col-md-2 job_icon">
+                                    <span class="fas fa-download fa-lg"></span>
+                                    <!-- translation avec hover -->
+                                    <!-- <span class='job_icon_span'></span> -->
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class='col-md-12'>
+                            {# {% url 'home_page'%} #}
+                            <div class='row'>
+                                <a href='{% url "base" %}' class='col-md-2 nav_header2 nav1'>
+                                    <span class="fa fa-home fa-lg icons"></span><br/>{% trans 'HOME' %}
+                                    <span class='nav1_span'> </span>
+                                </a>
+                                    <!-- <div class="modal" id="infos"> -->
+                                    <!--   <div class="modal-dialog"> -->
+                                    <!--     <div class="modal-content"> -->
+                                    <!--       <div class="modal-header"> -->
+                                    <!--         <button type="button" class="close" data-dismiss="modal">x</button> -->
+                                    <!--         <h4 class="modal-title">{% trans 'SORRY' %}</h4> -->
+                                    <!--       </div> -->
+                                    <!--       <div class="modal-body"> -->
+                                    <!--           {% trans 'Page not right yet' %} -->
+                                    <!--       </div> -->
+                                    <!--       <div class="modal-footer"> -->
+                                    <!--         <button class="btn btn-info" data-dismiss="modal">Fermer</button> -->
+                                    <!--       </div> -->
+                                    <!--     </div> -->
+                                    <!--   </div> -->
+                                    <!-- </div> -->
+                                <div class='col-md-2 dropdown'>
+                                    {# {% url 'services_page' %} #}
+                                    <div class='row'>
+                                        <a href='#' class='col-md-12 nav_header2 nav2'>
+                                            <span class="fa fa-cogs fa-lg icons"></span><br/>{% trans 'SERVICES' %}
+                                            <span class='nav2_span'> </span>
+                                        </a>
+
+                                        <!-- <div class='col-md-12 dropdown-content'> -->
+                                        <!--     <div class='row'> -->
+                                            <!--         <a href='{% url 'base' %}' class='col-md-12 nav_header2 nav2'> -->
+                                        <!--             <span class="fa fa-cogs fa-lg icons"></span><br/>Experiences -->
+                                        <!--             <span class='nav2_span'> </span> -->
+                                        <!--         </a> -->
+                                        <!--     </div> -->
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+
+                                <div class='col-md-2 dropdown'>
+                                {# {% url 'portofolio_page' %} #}
+                                    <div class='row'>
+                                        <a href='#' class='col-md-12 nav_header2 nav3'>
+                                            <span class="fa fa-briefcase fa-lg icons" ></span><br/>{% trans 'PORTOFOLIO' context 'portofolio' %}
+                                            <span class='nav3_span'> </span>
+                                        </a>
+                                        <!-- <div class='col-md-12 dropdown-content'> -->
+                                        <!--     <div class='row'> -->
+                                            <!--         <a href='{% url 'base' %}' class='col-md-12 nav_header2 nav3'> -->
+                                        <!--             <span class="fa fa-briefcase fa-lg icons"></span><br/>Portofolio Card -->
+                                        <!--             <span class='nav3_span'> </span> -->
+                                        <!--         </a> -->
+                                            <!--         <a href='{% url 'base' %}' class='col-md-12 nav_header2 nav3'> -->
+                                        <!--             <span class="fa fa-briefcase fa-lg icons"></span><br/>Portofolio Liste -->
+                                        <!--             <span class='nav3_span'> </span> -->
+                                        <!--         </a> -->
+                                        <!--     </div> -->
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+
+                                {# {% url 'contacts_page' %} #} 
+                                {% block nav_5_contacts %}
+                                    <a href='#' class='col-md-2 nav_header2 nav4'>
+                                        <span class="fa fa-map-marker-alt fa-lg icons" ></span><br/>{% trans 'CONTACTS' context 'contacts' %}
+                                        <span class='nav5_span'> </span>
+                                    </a>
+                                {% endblock nav_5_contacts %}
+
+                                {# {% url 'store_page' %} #}
+                                <a href='#' class='col-md-2 nav_header2 nav5'>
+									<span class="fa fa-shopping-cart fa-lg icons" ></span><br/>{% trans 'STORE' context 'store' %}
+                                    <span class='nav5_span'> </span>
+                                </a>
+
+                                <div class='col-md-2 dropdown'>
+                                    <div class='row'>
+                                        <a href='{% url 'blog_home_page' page=1 %}' class='col-md-12 nav_header2 nav6 desable'>
+                                            <span class="fab fa-blogger-b fa-lg icons" ></span><br/>{% trans 'BLOG' context 'blog' %}
+                                            <span class='nav5_span'> </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+            </header>
+
+            <!-- Corps de la page -->
+            <section class='row' style='background-color:#eee'>
+            {% block section %}
+                <!-- first part of the section -->
+                <div class='col-md-12'>
+                    <div class='row section1'>
+                    {% block section1 %}
+                        <div class='col-md-8'>
+                            <div class='row'>
+                                <div class='col-md-12 serviceContent'>
+                                    <p class='my_services'>
+                                    <strong>{% trans 'My Services' %}</strong><br>
+                                        <small class='service'>
+                                            {% trans "website development and web applications, responsive design, SEO and optimization" %}
+                                            {% trans "of applications and website, e-commerce service, below are a few services I provide."%} 
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class='col-md-12'>
+                                    <div class='row'>
+                                        <div class='col-md-4 serviceContent'>
+                                            <p class='my_services2'>
+                                            <span class='fa fa-object-group fa-3x' style='color: #B6FF17'></span>
+                                            <strong>{% trans "WEB APPLICATION" %}</strong> <br><br>
+                                            {% trans 'I develop secure, fast and powerful' %}
+                                            {% trans 'web2.0 applications for small business' %}
+                                            {% trans  'simple and complex like pinterest and' %}
+                                            {% trans 'bit bucket.' %}
+                                            </p>
+                                        </div>
+                                        <div class='col-md-4 serviceContent'>
+                                            <p class='my_services2'>
+                                            <span class='fas fa-crop fa-3x' style='color: #B6FF17'></span>
+                                            <strong>{% trans "RESPONSIVE DESIGN" %}</strong><br><br>
+                                                {% trans "Nowadays unavoidable, I realize" %}
+                                                {% trans "sites and applications that" %}
+                                                {% trans "automatically adapts to different" %}
+                                                {% trans "screen (desktop, tablet and smarphone)" %}
+                                            </p>
+                                        </div>
+                                        <div class='col-md-4 serviceContent'>
+                                            <p class='my_services2'>
+                                            <span class='fa fa-shopping-cart fa-3x' style='color: #B6FF17'></span>
+                                            <strong>{% trans 'E-COMMERCE' %}</strong><br><br>
+                                            {% trans "E-commerce, become a challenge and" %}
+                                            {% trans "a universe all expanding, I create" %}
+                                            {% trans "e-commerce website, my main activity" %}
+                                            {% trans "is the proposal of books in my blog" %}
+                                            {% trans "and more…" %}
+                                            </p>
+                                        </div>
+                                        <div class='col-md-12' style='height: 30px'>
+                                            <div class='row'>
+                                                <strong id='pointille' class='col-md-offset-5 col-md-2'>
+                                                    <a href='{% url 'base' %}' id='paS'>...</a>
+                                                </strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-4'>
+                            <div class='row personnal_infos'>
+                                <div class='col-md-12 sectionheight1'>
+                                    <p  class='infos'>
+                                    <strong style='font-size: 1.8em'>{% trans "Personnal Infos" %}</strong>
+                                        <p class='infosContent'>
+                                            <p><span class='titre'>{% trans "Full name" %}:</span> Alassane Yattara</p>
+                                            <p><span class='titre'>{% trans 'Age' %}:</span>  21 {% trans 'years' %}</p>
+                                            <p id='addr'><span class='titre'>Address:</span> 2220, Oulfa, Arreda,
+                                                <p style='padding-left: 165px'>{% trans "Casablanca Marroco" %}</p>
+                                            </p>
+                                            <p><span class='titre'>{% trans 'Phone' %}:</span>  +212 603 39 08 98</p>
+                                            <p><span class='titre'>{% trans 'Email' %}:</span> yattus50@gmail.com</p>
+                                            <p><span class='titre'>{% trans "Aviable-for" %}:</span>{% trans "Freelance job" %}</p>
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class='col-md-12' style='height: 30px'>
+                                    <div class='row'>
+                                        <strong id='pointille' class='col-md-offset-4 col-md-3'>
+                                            <a href='{% url 'base' %}' id='paI'>...</a>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock section1 %}
+                    </div>
+                </div>
+                <!-- Second part of the section -->
+                <div class='col-md-12'>
+                    <div class='row section2'>
+                    {% block section2 %}
+                        <div class='col-md-4 my_schools'>
+                            <div class='row'>
+                                <div class='col-md-12 schoolContent1'>
+                                    <strong>{% trans 'Education' %}</strong>
+                                </div>
+                                <div class='col-md-12 schoolContent'>
+                                    <strong>Polytechnique</strong>
+                                    <p class='education'>
+                                        <em>09/2016 In progress...</em>
+                                        <small class='pull-right'>{% trans "University of study" %}</small>
+                                    </p>
+                                </div>
+                                <div class='col-md-12 schoolContent'>
+                                    <strong>{% trans "Openclassrooms, CodeAcademy and Edx" %}</strong>
+                                    <p class='education'>
+                                        <em>02/2016 In progress...</em>
+                                        <small class='pull-right'>Study online</small>
+                                    </p>
+                                </div>
+                                <div class='col-md-12 schoolContent'>
+                                    <strong>{% trans "Web Media Network «Traineeship»" %}</strong>
+                                    <p class='education'>
+                                        <em>07/2017 - 08/2017</em>
+                                        <small class='pull-right'>{% trans 'Web-Agency' %}</small>
+                                    </p>
+                                </div>
+                                <div class='col-md-12 schoolContent'>
+                                    <strong>{% trans "Digital Agency «Traineeship»" %}</strong>
+                                    <p class='education'>
+                                        <em>06/2018 - 08/2018</em>
+                                        <small class='pull-right'>{% trans 'Web-Agency' %}</small>
+                                    </p>
+                                </div>
+                                <div class='col-md-12' style='height: 30px'>
+                                    <div class='row'>
+                                        <strong id='pointille' class='col-md-offset-4 col-md-3'>
+                                            <a href='{% url 'base' %}' id='paE'>...</a>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-8 my_skills'>
+                            <div class='row'>
+                            
+                                <div class='col-md-12 schoolContent1'>
+                                    <strong>{% trans "Professional Skills" %}</strong>
+                                </div>
+                                <div class='col-md-12'>
+                                    <div class='row'>
+                                        <aside class='col-md-6'>
+                                            <div class='row'>
+                                                <div class='col-md-12 aside professionalC1'>
+                                                    <i class="fa fa-object-group"></i>Web {% trans 'Design' %}<br>
+                                                    <div class='prog'>
+                                                        <div class='pweb_design'></div>
+                                                    </div>
+                                                    <div class='pull-right'>55%</div>
+                                                </div>
+                                                <div class='col-md-12 aside professionalC1'>
+                                                    <i class="fab fa-js"></i> Java-Script<br>
+                                                    <div class='prog'>
+                                                        <div class='pjavascript'></div>
+                                                    </div>
+                                                    <div class='pull-right'>77%</div>
+                                                </div>
+                                                <div class='col-md-12 aside professionalC1'>
+                                                  <i class="fas fa-laptop-code"></i> Web {% trans Programming %}<br>
+                                                    <div class='prog'>
+                                                        <div class='pweb_prog'></div>
+                                                    </div>
+                                                    <div class='pull-right'>95%</div>
+                                                </div>
+                                                <div class='col-md-12 aside professionalC1'>
+                                                    <i class="fas fa-file-code"></i> Vim<br>
+                                                    <div class='prog'>
+                                                        <div class='pvim'></div>
+                                                    </div>
+                                                    <div class='pull-right'>60%</div>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                        <aside class='col-md-6'>
+                                            <div class='row'>
+                                                <div class='col-md-12 aside professionalC2'>
+                                                    <i class="fab fa-html5"></i> HTML {% trans Coding %}<br>
+                                                    <div class='prog'>
+                                                        <div class='phtml'></div>
+                                                    </div>
+                                                    <div class='pull-right'>75%</div>
+                                                </div>
+                                                <div class='col-md-12 aside professionalC2'>
+                                                    <i class="fab fa-css3"></i> CSS3 {% trans Coding %}<br>
+                                                    <div class='prog'>
+                                                        <div class='pcss'></div>
+                                                    </div>
+                                                    <div class='pull-right'>70%</div>
+                                                </div>
+                                                <div class='col-md-12 aside professionalC2'>
+                                                    <i class="fab fa-python"></i><i class="fas fa-server"></i> Django<br>
+                                                    <div class='prog'>
+                                                        <div class='pdjango'></div>
+                                                    </div>
+                                                    <div class='pull-right'>85%</div>
+                                                </div>
+                                                <div class='col-md-12 aside professionalC2'>
+                                                    <i class="fab fa-wordpress"></i> WordPress<br>
+                                                    <div class='prog'>
+                                                        <div class='pwordpress'></div>
+                                                    </div>
+                                                    <div class='pull-right'>52%</div>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                    </div>
+                                </div>
+                                <div class='col-md-12' style='height: 30px'>
+                                    <div class='row'>
+                                        <strong id='pointille' class='col-md-offset-5 col-md-2'>
+                                            <a href='{% url 'base' %}' id='paP'>...</a>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock section2 %}
+                    </div>
+                </div>
+
+                <!-- <1!-- third part of the section --1> -->
+                <!-- <div class='col-md-12'> -->
+                <!--     <div class='row my_framework w3-dark-grey'> -->
+                <!--     {% block section3 %} -->
+                <!--                 <div class='col-md-2 sectionheight3'> -->
+                <!--                         <img class='col-md-13 django' src='../../static/blog/img/frame/logo.png' alt="Photo framework" > -->
+                <!--                 </div> -->
+                <!--                 <div class='col-md-2 sectionheight3'> -->
+                <!--                         <img class='col-md-13 bootstrap' src='../../static/blog/img/frame/bootstrap-inv2.png' alt="Photo framework" > -->
+                <!--                 </div> -->
+                <!--                 <div class='col-md-2 sectionheight3'> -->
+                <!--                         <img class='col-md-13 html' src='../../static/blog/img/frame/html-inv.png' alt="Photo framework" > -->
+                <!--                 </div> -->
+                <!--                 <div class='col-md-2 sectionheight3'> -->
+                <!--                         <img class='col-md-13 css' src='../../static/blog/img/frame/css-inv4.png' alt="Photo framework" > -->
+                <!--                 </div> -->
+                <!--                 <div class='col-md-2 sectionheight3'> -->
+                <!--                         <img class='col-md-13 jquery' src='../../static/blog/img/frame/jquery-inv2.png' alt="Photo framework" > -->
+                <!--                 </div> -->
+                <!--                 <div class='col-md-2 sectionheight3'> -->
+                <!--                         <img class='col-md-13 python' src='../../static/blog/img/frame/wordpress-inv2.png' alt="Photo framework" > -->
+                <!--                 </div> -->
+                <!--     {% endblock section3 %} -->
+                <!--     </div> -->
+                <!-- </div> -->
+
+            {% endblock section %}
+            </section>
+
+            <footer class='row'>
+            {% block footer %}
+                <div class='col-md-3 '>
+                    <div class='row'>
+                        <div class='col-md-12 footerheight1'>
+                            <strong>ALASSANE YATTARA</strong>
+                        </div>
+                        <div class='col-md-12 footerheight2'>
+                            <div class='row'>
+                                <p class='col-md-3 image'><img src="{% static 'blog/img/alass.jpeg' %}" alt="photo Developper freelance"></p>
+                                <div class='col-md-9 detail'>
+                                    <p>
+                                    {% trans "Web application back-end end front" %}
+                                    {% trans "end, Responsive design, SEO and more..." %}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-3 '>
+                    <div class='row'>
+                        <div class='col-md-12 footerheight1'>
+                            <strong>{% trans "MORE ABOUT ME" %}</strong>
+                        </div>
+                        <div class='col-md-12 footerheight2'>
+                            <p>
+                            {% trans "I'm student in computer ingeneer, living in Casablanca, morroco " %}
+                            {% trans "passionat in web developpement and programming, I make web applications" %}
+                            {% trans "and I create beautiful functional websites for small business, usually with" %}
+                                <span style='color:#f55'>DJANGO</span>.
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                <div class='col-md-3 '>
+                    <div class='row'>
+                        <div class='col-md-12 footerheight1'>
+                            <strong>{% trans "FIND MY INFO" %}</strong>
+                        </div>
+                        <div class='col-md-12 footerheight2'>
+                          <form class="form-inline" style="background-color: white; line-height:40px; width:242px">
+                              <!-- {% csrf_token %} -->
+                              <input type="text" style="width:150px; border:none" class="input-sm form-control" placeholder="{% trans 'Search' %}" method='POST' action='#'>
+                            <button type="submit" class="btn btn-primary btn-xs pull-right" style="line-height:30px; background-color:#555; margin:3px 3px 3px 0px "><span class="glyphicon glyphicon-eye-open"></span>{% trans 'Search' %}</button>
+                          </form>
+                        </div>
+                    </div>
+                    </div>
+                <div class='col-md-3 '>
+                    <div class='row'>
+                        <div class='col-md-12 footerheight1'>
+                            <strong>{% trans "STAY CONNECTED" %}</strong>
+                        </div>
+                        <div class='col-md-12 footerheight2'>
+                            <div class='row'>
+                                <a href='#' class='col-md-1' id='reseau1'><span class="fab fa-facebook-f fa-lg"></span></a>
+                                <a href='#' class='col-md-1' id='reseau'><span class="fab fa-google-plus-g fa-lg"></span></a>
+                                <a href='#' class='col-md-1' id='reseau'><span class="fab fa-instagram fa-lg"></span></a>
+                                <a href='#' class='col-md-1' id='reseau'><span class="fab fa-twitter fa-lg"></span></a>
+                           </div>
+                        </div>
+                    </div>
+                    </div>
+
+               <!-- Footer Start -->
+               <div class="col-md-12 page-body footer">
+                  <ul class="menu-link">
+                      <li><a href="{% url 'base' %}">Home</a></li>
+                       <li><a href="#">Services</a></li>
+                       <li><a href="#">Portofolio</a></li>
+                       <li><a href="#">Store</a></li>
+                       <li><a href="{% url 'blog_home_page' page=1 %}">Blog</a></li>
+                    </ul>
+                    
+                  <p>© Copyright 2019 <div class="uipasta-credit"><a href="http://www.uipasta.com" target="_blank">Yattara. </a></div> All rights reserved</p>
+                  
+                  
+                  <!-- UiPasta Credit Start -->
+                  <!-- <div class="uipasta-credit">Design By <a href="http://www.uipasta.com" target="_blank">UiPasta</a></div> -->
+                  <!-- UiPasta Credit End -->
+                  
+                   
+               </div>
+               <!-- Footer End -->
+            {% endblock footer %}
+            </footer>
+        </div>
+    {% endblock container %}
+    </div>
+
+    {% block script %}
+        {% bootstrap_messages %}
+        {% bootstrap_javascript jquery=1 %}
+        <script src='{% static 'blog/js/ExperienceAnimation.js' %}'></script>
+    {% endblock script %}
+    <script>
+        $('.nom_icon, .nav3, .nav5, .nav6').click(function() {
+          $('.modal').modal('show');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load bootstrap3 %}
+    {% load static %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="{% static "css/base.css" %}">
+    <link rel="stylesheet/less" type='text/css' href="{% static "less/services.less" %}">
+    {% bootstrap_css %}
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% comment %} Translators: Titre la page {% endcomment %}
+    <title>{% trans 'Freelance Developper' %}</title>
+{% endblock %}
+
+
+{% block section1 %}
+    <div class='col-md-12 Sheader1'>
+        <p class='my_Sheader1'>
+        <strong>{% trans 'Services' %}</strong><br>
+            <small class='Sheader1Content'>
+                {% trans "website development and web applications, responsive design, SEO and optimization" %}
+                {% trans "of applications and website, e-commerce service, below are a few services I provide."%} 
+            </small>
+        </p>
+    </div>
+    
+    <div class="col-md-12 Sheader2"></div>
+    <div class="col-md-12 Ssection1">
+        <div class="row">
+            <div class="col-md-12 offre">
+				<h1 class="section-header"><span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">We offers</span></h1>
+            </div>
+            <div class="col-md-offset-2 col-md-8 offreContent">
+                <h5>
+                    Creation of web apps, mobile apps, websites, e-commerce solution,
+                    creation site e-commerce, Seo SEO of web sites with payment to results, graphic
+                    communication, creation of graphic charters and audit of web site security.
+                </h5>
+            <div>
+        </div>
+    </div>
+    <div class="col-md-12 Ssection2">
+        <div class="row">
+            <div class="col-md-4">
+                <div class='col-md-12'>
+                    <span class="fas fa-crop fa-4x offreIcons"></span><br/><h3 style='font-weight:bold'>{% trans 'Design' %}</h3>
+                </div>
+                <div class='col-md-12 expe'>
+                    <div class='col-md-offset-1 col-md-5' style='margin-right:4px'>
+                        Web Design
+                    </div>
+                    <div class='col-md-5'>
+                        3D Graphic
+                    </div>
+                    <div class='col-md-4' style='margin:4px 4px 0 36px'>
+                        Visualisation
+                    </div>
+                    <div class='col-md-5' style='margin-top:4px'>
+                        Other Magic
+                    </div>
+                </div>
+                <div class='col-md-12 description'>
+                    For a living and coherent global communication.
+                    We create a graphic chart to your image. Design
+                    2D and 3D, Animations and Others Magic...
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class='col-md-12'>
+                    <span class="fas fa-laptop fa-4x offreIcons"></span><br/><h3 style='font-weight:bold'>{% trans 'Development' %}</h3>
+                </div>
+                <div class='col-md-12 expe'>
+                    <div class='col-md-7' style='margin:0 4px 0 -4px'>
+                        PYTHON Programming
+                    </div>
+                    <div class='col-md-5'>
+                        Mobile apps
+                    </div>
+                    <div class='col-md-4' style='margin:4px 4px 0px 25px'>
+                        Web apps
+                    </div>
+                    <div class='col-md-6' style='margin-top:4px'>
+                        Interface Design
+                    </div>
+                </div>
+                <div class='col-md-12 description'>
+                    Web apps, Mobile apps, showcase website, e-commerce or
+                    specific development ... We provide full support until
+                    the online.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class='col-md-12'>
+                    <span class="far fa-lightbulb fa-4x offreIcons"></span><br/><h3 style='font-weight:bold'>{% trans 'Marketing' %}</h3>
+                </div>
+                <div class='col-md-12 expe'>
+                    <div class='col-md-3' style='margin:0 4px 0 40px'>
+                        SEO
+                    </div>
+                    <div class='col-md-5'>
+                        Social Media
+                    </div>
+                    <div class='col-md-6' style='margin:4px 4px 0 10px'>
+                        Email Marketing
+                    </div>
+                    <div class='col-md-5' style='margin-top:4px'>
+                        Others Magic
+                    </div>
+                </div>
+                <div class='col-md-12 description'>
+                    We Can Improve the Web Image Of Yours Company.
+                    Audit and SEO optimization of your website
+                    in the main search engine.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class='col-md-12'>
+                    <span class="far fa-life-ring fa-4x offreIcons"></span><br/><h3 style='font-weight:bold'>{% trans 'Support' %}</h3>
+                </div>
+                <div class='col-md-12 expe'>
+                    <div class='col-md-4' style='margin:0 4px 0'>
+                        Maintenance
+                    </div>
+                    <div class='col-md-7'>
+                        advice and assistance
+                    </div>
+                    <div class='col-md-5' style='margin:4px 4px 0'>
+                        User Manual
+                    </div>
+                    <div class='col-md-6' style='margin-top:4px'>
+                        administration tools
+                    </div>
+                </div>
+                <div class='col-md-12 description'>
+                    We are an available team that advises you at
+                    every moment, with complete dedication.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class='col-md-12'>
+                    <span class="fas fa-shopping-cart fa-4x offreIcons"></span><br/><h3 style='font-weight:bold'>{% trans 'eCommerce' %}</h3>
+                </div>
+                <div class='col-md-12 expe'>
+                    <div class='col-md-7' style='margin:0 4px 0 -4px'>
+                        ECommerce Web apps
+                    </div>
+                    <div class='col-md-5'>
+                        book reviews
+                    </div>
+                    <div class='col-md-5' style='margin:4px 4px 0px 10px'>
+                        EC-Website
+                    </div>
+                    <div class='col-md-6' style='margin-top:4px'>
+                        ECommerce SEO
+                    </div>
+                </div>
+                <div class='col-md-12 description'>
+                    Creation of merchant website, E-Commerce
+                    platform with integration of all types
+                    of payment: PayPal, MTC, etc.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class='col-md-12'>
+                    <span class="fas fa-server fa-4x offreIcons"></span><br/><h3 style='font-weight:bold'>{% trans 'Hosting' %}</h3>
+                </div>
+                <div class='col-md-12 expe'>
+                    <div class='col-md-5' style='margin:0 4px 0 -4px'>
+                        Web Hosting
+                    </div>
+                    <div class='col-md-7'>
+                        Business Web Hosting
+                    </div>
+                    <div class='col-md-6' style='margin:4px 4px 0px 10px'>
+                        Wordpress Hosting
+                    </div>
+                    <div class='col-md-5' style='margin-top:4px'>
+                        Virtual Hosting
+                    </div>
+                </div>
+                <div class='col-md-12 description'>
+                    We aredy to transfer your sites on the internet, it's simple,
+                    secure, fast, reliable and we'll make sure everything works
+                    properly.
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock section1 %}
+
+{% block section2 %}
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12 prices">
+				<h1 class="section-header"><span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">Prices</span></h1>
+            </div>
+            <div class="col-md-offset-2 col-md-8 PricesContent">
+                <h5>
+                    Afin de pouvoir répondre rapidement aux besoins de certains de nos clients,
+                    nous avons mis en place un indicatif regroupant les prix de création de site
+                    internet. Bien entendu, chaque projet étant différent, et certains projets
+                    comportant des cahiers des charges extrêmement précis et cadrés, ces demandes
+                    seront traités par la biais d’un devis détaillé, en fonction de la nature de
+                    votre projet de création de site internet, et de vos différents besoins.
+                </h5>
+            <div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row S2section2">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong>{% trans 'START' %}</strong>
+                    </div>
+                    <div class="col-md-offset-3 col-md-6" style='background-color:#F39C12'>
+                        Prix
+                    </div>
+                    <div class="col-md-offset-1 col-md-10">
+                        You are a small business, an individual or
+                        an association, the presence pack is for you.
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Website + Mobile version
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Up to 4 pages
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Basic design
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                       Contact and reservation forms
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Online Administration Interface
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Hosting and domaine name
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent" style='border-bottom: 1px dashed lightgrey'>
+                        Professional Email
+                    </div>
+                    <div class="col-md-12">
+                        something in
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong>{% trans 'STANDARD' %}</strong>
+                    </div>
+                    <div class="col-md-offset-3 col-md-6" style='background-color:#A569BD'>
+                        Prix
+                    </div>
+                    <div class="col-md-offset-1 col-md-10">
+                        This pack contains all the elements
+                        to guarantee an effective presence
+                        on the internet. 
+                    </div> 
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Website + Mobile version
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Up to 4 pages
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Basic design
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                       Contact and reservation forms
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Online Administration Interface
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Hosting and domaine name
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent" style='border-bottom: 1px dashed lightgrey'>
+                        Professional Email
+                    </div>
+                    <div class="col-md-12">
+                        something in
+                    </div>
+               </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong>{% trans 'PRENIUM' %}</strong>
+                    </div>
+                    <div class="col-md-offset-3 col-md-6" style='background-color:#E77'>
+                        Prix
+                    </div>
+                    <div class="col-md-offset-1 col-md-10">
+                        Do you have a large number of products 
+                        to present online? The catalog pack 
+                        presents all of your products.
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Website + Mobile version &#10004
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Up to 4 pages &#10004
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Basic design &#10008
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                       reservation forms &#10008
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                       Contact &#10008
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                       Administration Interface &#10008
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent">
+                        Hosting and domaine name &#10008
+                    </div>
+                    <div class="col-md-offset-1 col-md-10 formuleContent" style='border-bottom: 1px dashed lightgrey'>
+                        Professional Email &#10008
+                    </div>
+                    <div class="col-md-12">
+                        something in
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock section2 %}
+
+
+<!-- Redefinition de la section 3 -->
+{% block section3 %}
+    <!-- hidden section3 content -->
+{% endblock %}
+
+{% block script %}
+
+    {% bootstrap_messages %}
+    {% bootstrap_javascript jquery=1 %}
+    <script src='{% static 'js/ExperienceAnimation.js' %}'></script>
+    <script src="{% static 'dist/less.js' %}" type='text/javascript'>
+
+{% endblock script %}

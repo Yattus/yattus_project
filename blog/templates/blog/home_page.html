@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+
+{% block add_to_base_head %}
+    {% load bootstrap3 %}
+    {% load static %}
+    {% load i18n %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <link rel="stylesheet/less" type='text/css' href="{% static "blog/less/blog_page.less" %}">
+    <link rel="stylesheet/less" type='text/css' href="{% static "blog/less/post_grid.less" %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Alex Website</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'blog/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Main CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/post/css/style.css' %}">
+
+    <!-- Custom CSS -->
+    <!-- <link href="{% static 'blog/blog/css/blog-home.css' %}" rel="stylesheet"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+{% endblock add_to_base_head %}
+
+    {# CONTACTS FROM NAV BAR #}
+    {% block nav_5_contacts %}
+        <a href='#' class='col-md-2 nav_header2 nav4'>
+            <span class="fa fa-map-marker fa-lg icons" ></span><br/>{% trans 'CONTACTS' context 'contacts' %}
+            <span class='nav5_span'> </span>
+        </a>
+    {% endblock nav_5_contacts %}
+
+    {% block section1 %}
+        <div class='col-md-12 Sheader1'>
+            <p class='my_Sheader1'>
+            <strong>{% trans 'Mon blog' %}</strong><br>
+                <small class='Sheader1Content'>
+                    {% trans "website development and web applications, responsive design, SEO and optimization" %}
+                    {% trans "of applications and website, e-commerce service, below are a few services I provide."%} 
+                </small>
+            </p>
+        </div>
+        
+        <div class="col-md-12 Sheader2"></div>
+
+    {% endblock section1 %}
+
+    <!-- Page Content -->
+    {% block section2 %}
+        {% block blog_header %}
+            <!-- Header -->
+            <header class="section2" id="portfolio">
+                <a href="#"><img src='{% static "blog/img/alass.jpeg" %}' style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+                <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+                <div class="w3-container">
+                    <h1><b>
+                            {% if categorie_name %}        
+                                {{ categorie_name|upper }}
+                            {% else %}
+                                HOME
+                            {% endif %}
+                    </b></h1>
+                    <div class="w3-section w3-bottombar w3-padding-16">
+                    <ul class="menu-link">
+                        <li><span class="w3-margin-right">Filter:</span></li> 
+                        <li><a href={% url "blog_home_page" page=1 %}><button class="w3-button {{ all }}">ALL</button></a></li>
+                        <li><a href={% url "blog_custom_page" categorie='Developpeur' page=1 %}><button class="w3-button {{ dev }} w3-hide-small"><i class="fa fa-laptop w3-margin-right"></i>Developpeur</button></a></li>
+                        <li><a href={% url "blog_custom_page" categorie='Demarreur' page=1 %}><button class="w3-button {{ dem }} w3-hide-small"><i class="glyphicon glyphicon-wrench w3-margin-right"></i>Demarreur</button></a></li>
+                        <li><a href={% url "blog_custom_page" categorie='autres' page=1 %}><button class="w3-button {{ autres }} w3-hide-small"><i class="fa fa-heart w3-margin-right"></i>Autres...</button></a></li>
+                    </ul>
+                    </div>
+                </div>
+            </header>
+            
+        {% endblock %}
+    
+
+            {% block blog_content %}
+
+            {% if posts %}
+                <!-- Second post content -->
+                {% block post_grid %}
+                    {% include "blog/post_grid.html" with posts=posts %}
+                {% endblock post_grid %}
+
+                <hr/>
+
+                <!-- Pagination -->
+                {% block pagination %}
+                    {% if categorie_name %}        
+                        {% include "blog/paginator.html" with cat=categorie_name|lower|capfirst %}
+                    {% else %}
+                        {% include "blog/paginator_home.html" %}
+                    {% endif %}
+                {% endblock pagination %}
+
+            {% else %}
+                <h2>SORRY ! NOT POST HERE</h2>
+            {% endif %}
+
+            {% endblock blog_content %}
+       
+       <!-- Footer Start -->
+        <div class="col-md-12 page-body footer" style="background: url('{% static "blog/img/post/images/bg/pattern-bg.png" %}');background-repeat: repeat;">
+          <ul class="menu-link">
+            <li><a href={% url "blog_home_page" page=1 %}>Home</a></li>
+            <li><a href={% url "blog_custom_page" categorie='Developpeur' page=1 %}>Developpeur</a></li>
+            <li><a href={% url "blog_custom_page" categorie='Demarreur' page=1 %}>Demarreur</a></li>
+            <li><a href={% url "blog_custom_page" categorie='autres' page=1 %}>Autres</a></li>
+            </ul>
+        </div>
+       <!-- Footer End -->
+    <!-- Back to Top Start -->
+
+    <a href="#" class="scroll-to-top"><i class="fa fa-long-arrow-up"></i></a>
+    <!-- Back to Top End -->
+    
+        {% endblock section2 %}
+
+    <!-- /.container -->
+
+    {% block script %}
+        {% bootstrap_messages %}
+        <!-- JavaScript Experience Animation -->
+        <script src='{% static 'blog/js/ExperienceAnimation.js' %}'></script>
+
+    <!-- jQuery -->
+        <script src="{% static 'blog/js/post/js/jquery.min.js' %}" ></script>
+
+    <!-- Bootstrap Core JavaScript -->
+        <script src="{% static 'blog/bootstrap/js/bootstrap.min.js' %}" ></script>
+
+    <!-- LESS -->
+        <script src="{% static 'dist/less.js' %}" type='text/javascript'>
+    {% endblock script %}

@@ -1,0 +1,74 @@
+# Packaging
+env/
+*.pyc
+devblog/
+__pycache__
+*.egg-info
+/dist/
+/build/
+/node_modules/
+
+# venv
+/bin/
+/lib/
+/share
+/pyvenv.cfg
+/pip-selfcheck.json
+
+# Vagrant
+.vagrant
+
+# Temporary/OS files
+*.swp
+*.swo
+*.*~
+.~lock.*
+*.DS_Store
+.python-version
+
+# IDE files
+.project
+.pydevproject
+.settings
+.idea
+.vscode
+
+# Docs
+/docs/build/*
+*.pdf
+TODO
+venv
+
+# Test files
+.coverage
+.coverage\.*
+.noseids
+coverage.xml
+violations.txt
+nosetests.xml
+/.cache/
+/.pytest_cache/
+/htmlcov/*
+/.tox/*
+
+# Sandbox content
+*settings_local.py
+settings_defaut.py
+*.sqlite3
+*assets/
+*public/
+*whoosh_index/
+*logs/
+
+# article post file
+blog/static/blog/img/post/images/blog/
+blog/static/blog/img/post/images/portfolio/
+blog/static/blog/img/post/images/testimonial/
+blog/static/blog/img/post/images/pic/
+blog/static/blog/img/post/images/owl-carousel/
+blog/staticfiles/blog/img/post/images/blog/
+blog/staticfiles/blog/img/post/images/portfolio/
+blog/staticfiles/blog/img/post/images/testimonial/
+blog/staticfiles/blog/img/post/images/pic/
+blog/staticfiles/blog/img/post/images/owl-carousel/
+*post_html/

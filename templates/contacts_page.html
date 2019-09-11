@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load bootstrap3 %}
+    {% load static %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <link rel="stylesheet/less" href="{% static "less/contactsforms.less" %}">
+    <link rel="stylesheet" href="{% static "css/MesInfos.css" %}">
+    {% bootstrap_css %}
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<!-- Contacts forms link -->
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+   	<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+   	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Mes infos link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% comment %} Translators: Titre la page {% endcomment %}
+    <title>{% trans 'Freelance Developper' %}</title>
+{% endblock %}
+
+
+{% block section1 %}
+    <div class='col-md-12 Sheader1'>
+        <p class='my_Sheader1'>
+        <strong>{% trans 'Contacts' %}</strong><br>
+            <small class='Sheader1Content'>
+                {% trans "website development and web applications, responsive design, SEO and optimization" %}
+                {% trans "of applications and website, e-commerce service, below are a few services I provide."%} 
+            </small>
+        </p>
+    </div>
+    
+   <div class="col-md-12 Sheader2"></div>
+
+<!------ Include the above in your HEAD tag ---------->
+  
+<section class="col-md-12" id="contact">
+    <div class="row">
+			<div class="section-content col-md-12">
+				<h1 class="section-header"><span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">Contacts us</span></h1>
+				<h3>Contactez-nous afin d’étudier ensemble votre besoin.</h3>
+			</div>
+			<div class="contact-section">
+			<div class="container col-md-12">
+				<form class="row" enctype= "multipart/form-data">
+                    {% csrf_token %}
+					<div class="col-md-6 form-line">
+			  			<div class="form-group">
+			  				<label for="exampleInputUsername">Your name</label>
+					    	<input type="text" class="form-control" id="" placeholder=" Enter Name">
+				  		</div>
+				  		<div class="form-group">
+					    	<label for="exampleInputEmail">Email Address</label>
+					    	<input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
+					  	</div>	
+					  	<div class="form-group">
+					    	<label for="telephone">Mobile No.</label>
+					    	<input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
+			  			</div>
+			  		</div>
+			  		<div class="col-md-6">
+					  	<div class="form-group">
+					    	<label for="telephone"> Subject</label>
+					    	<input type="tel" class="form-control" id="telephone" placeholder=" Offre d'emploi à plein temps,  Offre d'emploi,  demandez devis ">
+			  			</div>
+			  			<div class="form-group">
+			  				<label for ="description"> Message</label>
+			  			 	<textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
+			  			</div>
+			  			<div>
+			  				<button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+			  			</div>
+					</div>
+				</form>
+			</div>
+        </div>
+</section>    
+
+<div class='col-md-12' style='background-color:#eee; margin: 140px 0px 140px'>
+    <div class="container2 row">
+        <div class="col-md-4 box boxone">
+            <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+            <div class='details'><h3>Morroco</h3></div>
+        </div>
+        
+        <div class="col-md-4 box">
+            <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+            <div class='details'><h3>+212 603390892</h3></div>
+        </div>
+        
+        <div class="col-md-4 box">
+            <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+            <div class='details'><h3>yattus50@gmail.com</h3></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block section2 %}
+        <img class='col-md-13' src="{% static "blog/img/map.png" %}" alt="photo freelance Developper" style='display:block;height:500px;width:100%;margin-bottom:80px'>
+{% endblock %}
+
+
+{% block script %}
+
+    {% bootstrap_messages %}
+    {% bootstrap_javascript jquery=1 %}
+    <script src='{% static 'js/ExperienceAnimation.js' %}'></script>
+    <script src="{% static 'dist/less.js' %}" type='text/javascript'>
+
+{% endblock script %}

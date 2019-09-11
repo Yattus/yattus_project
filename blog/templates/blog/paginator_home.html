@@ -1,0 +1,21 @@
+{% if is_paginated %}
+<!-- Pagination -->
+<div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+        {% if  page_obj.has_previous %}
+            <a href="{% url 'blog_home_page' page_obj.previous_page_number %}" class="w3-bar-item w3-button w3-hover-black">«</a>
+        {% endif %}
+        
+        {% for num_page in page_obj.paginator.page_range %}
+        {% if page_obj.number == num_page %}
+            <a href="{% url 'blog_home_page' num_page %}" class="w3-bar-item w3-black w3-button">{{ num_page }}</a>
+            {% else %}
+                <a href="{% url 'blog_home_page' num_page %}" class="w3-bar-item w3-button w3-hover-black">{{ num_page }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+            <a href="{% url 'blog_home_page' page_obj.next_page_number %}" class="w3-bar-item w3-button w3-hover-black">»</a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load bootstrap3 %}
+{% load static %}
+{% load i18n %}
+
+<div class="w3-row-padding section2">
+    {% for post in posts %}
+    <a href="{% url 'detail_post' slug=post.slug pk=post.id %}">
+        <div class="w3-third w3-container w3-margin-bottom post_grid" style="width:20%">
+            <img src='{{ post.vue.url }}' alt="Norway" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                <p class="lead" style="font-size:1.1em"><b style="color:#e62">{{post.titre|truncatechars:15}}</b></p>
+                    <p>
+                        {{post.introduction|truncatechars:40}}
+                    </p>
+                    <!-- <hr> <p class="lead"> by <a href="index.php">{{ post.auteur }}</a> --> 
+                    <!-- <span class="glyphicon glyphicon-time"></span>{{ post.date_post|date:"d M Y" }}</p> -->
+                <!-- <p><b>{{ post.titre }}</b></p> -->
+                <!-- <p>{{post.sous_titre}}</p> -->
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
