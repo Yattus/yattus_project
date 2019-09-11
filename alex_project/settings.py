@@ -148,14 +148,16 @@ INTERNAL_IPS = ['127.0.0.1']
 
 
 if os.environ.get('ENV') == 'PRODUCTION':
-    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # Path helper
+    location = lambda x: os.path.join(
+        os.path.dirname(os.path.realpath(__file__)), '..', x)
 
     # Static files (CSS, JavaScript, Images)
-    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+    STATIC_ROOT = location('staticfiles')
     STATIC_URL = '/static/'
 
     STATICFILES_DIRS = (
-        os.path.join(PROJECT_ROOT, 'static'),
+        location('static'),
     )
 
     # """ DROPBOX CONFIGURATION """
