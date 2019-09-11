@@ -22,11 +22,11 @@ from blog.views import PostListView
 
 
 urlpatterns = [
+    re_path(r'^admin/', admin.site.urls),  # urls to admin
     re_path(
         r'^accueil',
         TemplateView.as_view(template_name='base.html'),
         name='base'),
-    re_path(r'^admin/', admin.site.urls),  # urls to admin
     re_path(r'^$', PostListView.as_view(), name='home'),
     re_path(r'^blog/', include('blog.urls')),  # urls to blog
     re_path(r'^store/', TemplateView.as_view(template_name='store_page.html'),

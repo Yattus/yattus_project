@@ -17,6 +17,10 @@ env = environ.Env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Path helper
+location = lambda x: os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                  '..', x)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -134,11 +138,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = location('staticfiles')
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static/"),
-# ]
+STATICFILES_DIRS = [
+    location("static/"),
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
@@ -148,10 +152,6 @@ INTERNAL_IPS = ['127.0.0.1']
 
 
 if os.environ.get('ENV') == 'PRODUCTION':
-    # Path helper
-    location = lambda x: os.path.join(
-        os.path.dirname(os.path.realpath(__file__)), '..', x)
-
     # Static files (CSS, JavaScript, Images)
     STATIC_ROOT = location('staticfiles')
     STATIC_URL = '/static/'

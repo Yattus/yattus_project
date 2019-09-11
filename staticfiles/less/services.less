@@ -1,0 +1,150 @@
+@value: 100px;
+@font: 'open_sanslight', sans-serif, Verdana, Arial, "Arial Black", Impact;
+
+.Sheader1{
+    width: 0px;
+    background: #3498db;
+    height: 145px;
+    text-align: left;
+    color: white;
+
+    .my_Sheader1{
+        padding-top: 46px;
+        padding-left: 50px;
+        font-size: 1.3em;
+
+        strong {
+            font-family: @font;
+            font-size: 1.8em;
+        }
+        
+        .Sheader1Content{
+            display: block;
+            width: 800px;
+            font-family: @font;
+            padding-left: 50px;
+        }
+    }
+}
+
+.Sheader2{
+    width: 0px;
+    height: 0px;
+    border-right: 1110px solid transparent;
+    border-top: 80px solid #3498db;
+}
+
+.Ssection1 {
+    background-color: white;
+}
+
+.offre {
+    margin-top: @value;
+}
+
+.offreContent{
+    color: #777;
+}
+
+.Ssection2 {
+    padding-bottom: @value;
+    padding-top: @value;
+    background-color: white;
+}
+
+.offreIcons {
+    color: #f44;
+}
+
+
+.expe {
+    line-height: @value - 40px;
+    font-family: @font;
+
+    div {
+        background-color: #9bf;
+        color: white;
+        line-height:20px;
+        border-radius:7px;
+    }
+}
+
+.description{
+    height: @value + 30px;
+    padding-top: 15px;
+    font-family: @font;
+    text-align: center;
+} 
+
+.content-header{
+  font-family: 'Oleo Script', cursive;
+  font-size: 45px;
+}
+
+.S2section2 {
+    display:flex;
+    justify-content:space-around;
+    background: #eee;
+}
+
+.prices {
+    margin-top: @value;
+}
+
+.PricesContent{
+    margin-bottom: @value - 40px;
+    font-family: @font;
+    color: #555;
+}
+
+.border-raduis(@arg: 0px, @bp: 1px, @bs: solid, @bc: white) {
+    border: @bp @bs @bc;  
+
+    -moz-border-radius: @arg;
+    -webkit-border-radius: @arg;
+    border-radius: @arg;
+}
+
+.S2section2 {
+   margin-bottom: @value + 30px;
+
+    div {
+        background: white;
+        
+        div {
+            div:nth-child(1){
+                line-height: @value;
+
+            strong {
+                    font-family: @font;
+                    font-size: 1.8em;
+                }
+            }
+
+            div:nth-child(2){
+                line-height: @value + 40px;
+                .border-raduis(100px, 0px);
+                color: white;
+                font-family: @font;
+            }
+
+            div:nth-child(3){
+                height: @value + 30px;
+                padding-top: 25px;
+                font-family: @font;
+                text-align: center;
+            }
+
+            .formuleContent {
+                line-height: @value - 65px;
+                border-top: 1px dashed lightgrey;
+                // font-family: 'open_sansitalic', @font;
+            }
+
+            div:last-of-type{
+                line-height: @value;
+            }
+        }
+    }
+}
+
