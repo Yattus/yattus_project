@@ -17,12 +17,12 @@ from django.urls import re_path
 from .views import PostListView, PostDetailView, CategorieListView
 
 urlpatterns = [
-    re_path(r'^home/(?P<page>\d+)$', PostListView.as_view(),
+    re_path(r'^blog/home/(?P<page>\d+)$', PostListView.as_view(),
             name='blog_home_page'),
-    re_path(r'^categorie/(?P<categorie>\w+)/(?P<page>\d+)$',
+    re_path(r'^blog/categorie/(?P<categorie>\w+)/(?P<page>\d+)$',
             CategorieListView.as_view(), name='blog_custom_page'),
     re_path(
-        r'^post/(?P<slug>.+)-(?P<pk>\d+)$',
+        r'^blog/post/(?P<slug>.+)-(?P<pk>\d+)$',
         PostDetailView.as_view(),
         name='detail_post'),
 ]
