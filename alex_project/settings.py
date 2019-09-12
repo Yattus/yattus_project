@@ -34,7 +34,11 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = env.bool('DEBUG', default=True)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['alassane.herokuapp.com', 'localhost'])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS',
+                         default=['alassane.herokuapp.com',
+                                  'www.alassane.herokuapp.com',
+                                  '*',
+                                  'localhost'])
 
 # Application definition
 INSTALLED_APPS = [
@@ -157,9 +161,9 @@ if os.environ.get('ENV') == 'PRODUCTION':
     just http://example.com. In this case you would normally use Django’s
     FORCE_SCRIPT_NAME setting to tell the application where it is located
     """
-    FORCE_SCRIPT_NAME = '/blog'
-    STATIC_URL = FORCE_SCRIPT_NAME + '/static/'
+    # FORCE_SCRIPT_NAME = '/blog'
     # Static files (CSS, JavaScript, Images)
+    STATIC_URL = '/static/'
     STATIC_ROOT = location('staticfiles')
 
     STATICFILES_DIRS = (
@@ -190,3 +194,44 @@ if os.environ.get('ENV') == 'PRODUCTION':
 
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
+
+
+# Django logging settings
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': ('%(asctime)s [%(process)d] [%(levelname)s] '
+                       'pathname=%(pathname)s lineno=%(lineno)s '
+                       'funcname=%(funcName)s %(message)s'),
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        }
+    },
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    }
+}
