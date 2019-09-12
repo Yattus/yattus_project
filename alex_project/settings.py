@@ -152,9 +152,15 @@ INTERNAL_IPS = ['127.0.0.1']
 
 
 if os.environ.get('ENV') == 'PRODUCTION':
+    """ Sometimes Django apps are deployed at a particular prefix
+    (or “subdirectory”) on a domain e.g. http://example.com/my-app/ rather than
+    just http://example.com. In this case you would normally use Django’s
+    FORCE_SCRIPT_NAME setting to tell the application where it is located
+    """
+    FORCE_SCRIPT_NAME = '/blog'
+    STATIC_URL = FORCE_SCRIPT_NAME + '/static/'
     # Static files (CSS, JavaScript, Images)
     STATIC_ROOT = location('staticfiles')
-    STATIC_URL = '/static/'
 
     STATICFILES_DIRS = (
         location('static'),
