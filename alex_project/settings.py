@@ -176,16 +176,16 @@ if os.environ.get('ENV') == 'PRODUCTION':
 
     DROPBOX_OAUTH2_TOKEN = "QH8Mis-t1EAAAAAAAAAAEFd2xvWbp5-DkSc-7W5xzz-V9Me_EnzRMUXALHxeq-Oc"
 
-    DROPBOX_ROOT_PATH = '/blog/media/'
+    DROPBOX_ROOT_PATH = '/blog/'
 
     DROPBOX_OAUTH2_KEY = "x6wtdz1yz5xe05j"
 
     DROPBOX_OAUTH2_SECRET = "9nczp780kbzbgah"
 
-    MEDIA_URL = '/blog/media/'
-    MEDIA_ROOT = 'blog/media/'
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = 'media/'
 
-    ADMIN_MEDIA_PREFIX = '/blog/media/'
+    ADMIN_MEDIA_PREFIX = 'media/'
     # "************ END DROPBOX CONFIGURATION ************"
 
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
@@ -196,42 +196,16 @@ if os.environ.get('ENV') == 'PRODUCTION':
     DATABASES['default'].update(db_from_env)
 
 
-# Django logging settings
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': ('%(asctime)s [%(process)d] [%(levelname)s] '
-                       'pathname=%(pathname)s lineno=%(lineno)s '
-                       'funcname=%(funcName)s %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        }
-    },
-    'handlers': {
-        'null': {
-            'level': 'DEBUG',
-            'class': 'logging.NullHandler',
-        },
-        'console': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
-        }
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-        'django.request': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-    }
-}
+# EMAIL CONFIGURATION
+ADMINS = (('yattus', 'yattus50@gmail.com'),)
+MANAGERS = ADMINSEMAIL_HOST = 'host'
+SEND_BROKEN_LINK_EMAILS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_PORT = 588
+EMAIL_HOST_USER = 'yattus50@gmail.com'
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='False_pass')
+EMAIL_USE_TLS = True
+# SERVER_EMAIL = 'django@my-domain.com'
+EMAIL_HOST = 'smtp.gmail.com'
+SERVER_EMAIL = EMAIL_HOST_USER

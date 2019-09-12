@@ -14,10 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import re_path
-#  from django.views.generic import TemplateView
 from .views import PostListView, PostDetailView, CategorieListView
-# from django.urls import reverse_lazy
-# from django.views.generic.base import RedirectView
 
 urlpatterns = [
     re_path(r'^home/(?P<page>\d+)$', PostListView.as_view(),
@@ -28,6 +25,4 @@ urlpatterns = [
         r'^post/(?P<slug>.+)-(?P<pk>\d+)$',
         PostDetailView.as_view(),
         name='detail_post'),
-    #  re_path(r'^categorie/(?P<slug>.+)$' )
-    #  re_path(r'^article/(?P<id>\d+)/(?P<slug>.+)$', )
 ]
