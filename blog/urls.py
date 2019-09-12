@@ -20,7 +20,7 @@ from .views import PostListView, PostDetailView, CategorieListView
 # from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    re_path(r'home/(?P<page>\d+)$', PostListView.as_view(),
+    re_path('home/(?P<page>\d+)$', PostListView.as_view(),
             name='blog_home_page'),
     re_path(r'categorie/(?P<categorie>\w+)/(?P<page>\d+)$',
             CategorieListView.as_view(), name='blog_custom_page'),

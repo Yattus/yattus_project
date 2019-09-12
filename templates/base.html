@@ -74,7 +74,7 @@
                             {# {% url 'home_page'%} #}
                             <div class='row'>
                                 <a href='{% url "base" %}' class='col-md-2 nav_header2 nav1'>
-                                    <span class="fa fa-home fa-lg icons"></span><br/>{% trans 'HOME' %}
+                                    <span class="fa fa-home fa-lg icons"></span><br/>{% trans 'HOME' context 'HOME' %}
                                     <span class='nav1_span'> </span>
                                 </a>
                                     <!-- <div class="modal" id="infos"> -->
@@ -97,7 +97,7 @@
                                     {# {% url 'services_page' %} #}
                                     <div class='row'>
                                         <a href='#' class='col-md-12 nav_header2 nav2'>
-                                            <span class="fa fa-cogs fa-lg icons"></span><br/>{% trans 'SERVICES' %}
+                                            <span class="fa fa-cogs fa-lg icons"></span><br/>{% trans 'SERVICES' context 'SERVICES' %}
                                             <span class='nav2_span'> </span>
                                         </a>
 

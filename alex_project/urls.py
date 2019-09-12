@@ -18,18 +18,21 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, re_path, path
 from django.views.generic import TemplateView
-from blog.views import PostListView
-# from django.urls import reverse_lazy
-# from django.views.generic.base import RedirectView
+# from blog.views import PostListView
+from django.urls import reverse_lazy
+from django.views.generic.base import RedirectView
 
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),  # urls to admin
     re_path(r'^home/$', TemplateView.as_view(template_name='base.html'),
             name='base'),
-    # path('', RedirectView.as_view(url='/blog/home/1')),
-    path('', PostListView.as_view(), name='home'),
-    path('blog/', include('blog.urls')),  # urls to blog
+    path('', RedirectView.as_view(url=reverse_lazy('blog_home_page',
+                                                   kwargs={'page': 1},
+                                                   current_app='blog'
+                                                   ))),
+    # path('', PostListView.as_view(), name='home'),
+    re_path(r'^blog/', include('blog.urls')),  # urls to blog
     re_path(r'^store/', TemplateView.as_view(template_name='store_page.html'),
             name='store_page'),  # urls to store page
 
